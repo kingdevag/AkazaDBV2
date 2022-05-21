@@ -39,7 +39,7 @@ class Player(commands.Cog, name="Musica"):
     async def play_song(self, ctx, song):
         url = pafy.new(song).getbestaudio().url
         if host == "dev":
-            ctx.voice_client.play(nextcord.PCMVolumeTransformer(nextcord.FFmpegPCMAudio(url, executable="ffmpeg.exe")), after=lambda error: self.Bot.loop.create_task(self.check_queue(ctx)))
+            ctx.voice_client.play(nextcord.PCMVolumeTransformer(nextcord.FFmpegPCMAudio(url, executable="./ffmpeg.exe")), after=lambda error: self.Bot.loop.create_task(self.check_queue(ctx)))
         else:
             ctx.voice_client.play(nextcord.PCMVolumeTransformer(nextcord.FFmpegPCMAudio(url)), after=lambda error: self.Bot.loop.create_task(self.check_queue(ctx)))
         ctx.voice_client.source.volume = 0.5
