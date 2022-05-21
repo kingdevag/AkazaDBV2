@@ -277,6 +277,7 @@ async def on_ready():
         async with db.cursor() as cursor:
             await cursor.execute('CREATE TABLE IF NOT EXISTS welcome (channel_text ID, guild ID)')
         await db.commit()
+        print(os.system("ffmpeg -V"))
 
         
     await Bot.change_presence(activity=nextcord.Game(name="Utiliza !help",))
