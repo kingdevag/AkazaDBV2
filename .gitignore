@@ -1,5 +1,4 @@
 env
 env\
-ffmpeg.exe
 .env
 __pycache__
